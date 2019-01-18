@@ -7,6 +7,6 @@ public class ArgsSum {
 			sum = sum + Integer.parseInt(args[i]);
 			i = i + 1;
 		}
-		System.out.println(sum);		
+		System.out.println(sum);
 	}
-} 
+}
