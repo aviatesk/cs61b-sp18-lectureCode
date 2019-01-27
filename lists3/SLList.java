@@ -1,15 +1,15 @@
  /** An SLList is a list of integers, which hides the terrible truth
    * of the nakedness within. */
-public class SLList<LochNess> {	
+public class SLList<LochNess> {
 	private class StuffNode {
-		public LochNess item;
-		public StuffNode next;
+		LochNess item;
+		StuffNode next;
 
-		public StuffNode(LochNess i, StuffNode n) {
+		StuffNode(LochNess i, StuffNode n) {
 			item = i;
 			next = n;
 		}
-	} 
+	}
 
 	private StuffNode first;
 	private int size;
@@ -27,7 +27,7 @@ public class SLList<LochNess> {
 
  	/** Returns the first item in the list. */
  	public LochNess getFirst() {
- 		return first.item; 		
+ 		return first.item;
  	}
 
  	/** Adds an item to the end of the list. */
