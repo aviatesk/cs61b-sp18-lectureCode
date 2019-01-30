@@ -22,7 +22,7 @@ public class AList<Item> implements List61B<Item>{
     private void resize(int capacity) {
     	Item[] a = (Item[]) new Object[capacity];
     	System.arraycopy(items, 0, a, 0, size);
-    	items = a;    	
+    	items = a;
     }
 
     @Override
@@ -52,7 +52,7 @@ public class AList<Item> implements List61B<Item>{
     @Override
     /** Returns the number of items in the list. */
     public int size() {
-        return size;        
+        return size;
     }
 
     @Override

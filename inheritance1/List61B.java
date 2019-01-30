@@ -43,8 +43,11 @@ public interface List61B<Item> {
 
     /** Prints the list. Works for ANY kind of list. */
     default public void print() {
+        System.out.println("This is original print func:");
         for (int i = 0; i < size(); i = i + 1) {
             System.out.print(get(i) + " ");
         }
+        System.out.println();
     }
+
 }

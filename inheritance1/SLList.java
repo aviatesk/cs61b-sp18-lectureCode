@@ -8,12 +8,12 @@ public class SLList<Blorp> implements List61B<Blorp> {
 
 		public Node(Blorp i, Node h) {
 			item = i;
-			next = h;		
+			next = h;
 		}
-	} 
+	}
 
 	private Node sentinel;
-	private int size; 
+	private int size;
 
 	/** Creates an empty list. */
 	public SLList() {
@@ -28,6 +28,7 @@ public class SLList<Blorp> implements List61B<Blorp> {
 	}
 
 	/** Adds an item of the front. */
+	@Override
 	public void addFirst(Blorp x) {
 		Node oldFrontNode = sentinel.next;
 		Node newNode = new Node(x, oldFrontNode);
@@ -36,11 +37,13 @@ public class SLList<Blorp> implements List61B<Blorp> {
 	}
 
 	/** Gets the front item of the list. */
+	@Override
 	public Blorp getFirst() {
 		return sentinel.next.item;
 	}
 
 	/** Puts an item at the back of the list. */
+	@Override
 	public void addLast(Blorp x) {
 		size += 1;
 
@@ -66,12 +69,14 @@ public class SLList<Blorp> implements List61B<Blorp> {
 	}
 
 	/** Returns last item */
+	@Override
 	public Blorp getLast() {
 		Node back = getLastNode();
 		return back.item;
 	}
 
 	/** Deletes and returns last item. */
+	@Override
 	public Blorp removeLast() {
 		Node back = getLastNode();
 		if (back == sentinel) {
@@ -87,11 +92,13 @@ public class SLList<Blorp> implements List61B<Blorp> {
 		return back.item;
 	}
 
+	@Override
 	public int size() {
 		return size;
 	}
 
 	/** Gets the positionth item of the list. */
+	@Override
 	public Blorp get(int position) {
 		if (position == 0) {
 			return getFirst();
@@ -107,6 +114,7 @@ public class SLList<Blorp> implements List61B<Blorp> {
 
     /** Inserts item into given position.
       * Code from discussion #3 */
+  	@Override
 	public void insert(Blorp item, int position) {
 		if (sentinel.next == null || position == 0) {
 			addFirst(item);
@@ -121,14 +129,17 @@ public class SLList<Blorp> implements List61B<Blorp> {
 
 		Node newNode = new Node(item, currentNode.next);
 		currentNode.next = newNode;
-	}	
+	}
 
 
 	/** TODO: Add a print method that overrides List61B's inefficient print method. */
 	@Override
 	public void print() {
+		System.out.println("This is overrided print func:");
 		for (Node p = sentinel.next; p != null; p = p.next) {
 			System.out.print(p.item + " ");
 		}
+		System.out.println();
 	}
+	
 }
