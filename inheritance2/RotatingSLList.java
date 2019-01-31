@@ -1,7 +1,7 @@
 /* SLList, but with additional rotateRight operation. */
 public class RotatingSLList<Item> extends SLList<Item> {
 
-	/** To do: Implement RotatingSLList such that code compiles and outputs correct result. */
+	/** TODO: Implement RotatingSLList such that code compiles and outputs correct result. */
 
 	/** Rotates list to the right. */
 	public void rotateRight() {
@@ -21,4 +21,4 @@ public class RotatingSLList<Item> extends SLList<Item> {
 		rsl.rotateRight();
 		rsl.print();
 	}
-} 
+}

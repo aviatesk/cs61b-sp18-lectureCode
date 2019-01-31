@@ -9,6 +9,11 @@ public class VengefulSLList<Item> extends SLList<Item> {
     }
 
     public VengefulSLList(Item x) {
+        /**
+         * If this super(x); is not explictly called, Item x won't be added at initialization,
+         * because it will call the default contructor, which doesn't take any Item.
+         */
+        super(x);
         deletedItems = new SLList<Item>();
     }
 
@@ -31,15 +36,17 @@ public class VengefulSLList<Item> extends SLList<Item> {
 		vs1.addLast(5);
 		vs1.addLast(10);
 		vs1.addLast(13);
-		// vs1 is now: [1, 5, 10, 13] 
-
+		// vs1 is now: [1, 5, 10, 13]
 
 		vs1.removeLast();
 		vs1.removeLast();
 		// After deletion, vs1 is: [1, 5]
 
 		// Should print out the numbers of the fallen, namely 10 and 13.
+        System.out.print("The survived are: ");
+        vs1.print();
+        System.out.println();
 		System.out.print("The fallen are: ");
 		vs1.printLostItems();
 	}
-} 
+}
