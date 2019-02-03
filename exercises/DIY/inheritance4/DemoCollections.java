@@ -15,30 +15,51 @@ public class DemoCollections {
 
 	/** Gets a list of all words in the file. */
 	public static List<String> getWords(String inputFilename) {
-		return null;
+		List<String> words = new ArrayList<String>();
+		In in = new In(inputFilename);
+		while (!in.isEmpty()) {
+			String nextWord = cleanString(in.readString());
+			words.add(nextWord);
+		}
+		return words;
 	}
 
 	/** Returns the count of the number of unique words in words. */
 	public static int countUniqueWords(List<String> words) {
-		return 0;
+		Set<String> wordSet = new HashSet<String>();
+		for (String ithWord : words) {
+			wordSet.add(ithWord);
+		}
+		return wordSet.size();
 	}
 
 	/** Returns a map (a.k.a. dictionary) that tracks the count of all specified
 	  * target words in words. */
 	public static Map<String, Integer> collectWordCount(List<String> words, List<String> targets) {
-		return null;
+		Map<String, Integer> counts = new HashMap<String, Integer>();
+		for (String t : targets) {
+			counts.put(t, 0);
+		}
+		for (String s : words) {
+			if (counts.containsKey(s)) {
+				int oldCount = counts.get(s);
+				counts.put(s, oldCount + 1);
+			}
+		}
+		return counts;
 	}
 
 	public static void main(String[] args) {
 		List<String> w = getWords("lotteryOfBabylon.txt");
-		System.out.println(w);
-		/*System.out.println(countUniqueWords(w));
+		System.out.println("List: " + w);
+
+		System.out.println("Set: " + countUniqueWords(w));
 
 		List<String> targets = new ArrayList<String>();
 		targets.add("lottery");
 		targets.add("the");
 		targets.add("babylon");
-
-		System.out.println(collectWordCount(w, targets));*/
+		System.out.println("Map: " + collectWordCount(w, targets));
 	}
-} 
+
+}
