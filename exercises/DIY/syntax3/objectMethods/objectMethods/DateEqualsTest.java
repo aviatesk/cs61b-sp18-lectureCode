@@ -3,6 +3,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class DateEqualsTest {
+
     @Test
     public void testEquals() {
         Date d1a = new Date(5, 10, 2010);
@@ -14,4 +15,5 @@ public class DateEqualsTest {
         assertNotEquals(d1a, "horse");
         assertNotEquals(d1a, null);
     }
+
 }

@@ -11,6 +11,10 @@ public class IterationDemo {
         am.put("kingdom", 10);
 
         Iterator<String> it = am.iterator();
+        System.out.println(it.next());
+
+//        ArrayMap.KeyIterator kit = (ArrayMap.KeyIterator) it;
+//        System.out.println(kit.next());
 
         for (String s : am) {
             System.out.println(s);
