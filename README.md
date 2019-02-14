@@ -13,7 +13,7 @@ This repository is registered as a submodule of the [main self-learning reposito
   
   
 - Course web-page: https://sp18.datastructur.es/index.html
-- This original cloned repository: https://github.com/Berkeley-CS61B/lectureCode-sp18
+- The original cloned repository: https://github.com/Berkeley-CS61B/lectureCode-sp18
 - My self-learning repository: https://github.com/aviatesk/cs61b-sp18
   
   
